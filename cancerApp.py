@@ -7,7 +7,7 @@ import numpy as np
 
 # obtenion de la table de donnees et netoyage
 def get_clean_data():
-    data = pd.read_csv("C:/Users/anass/Desktop/Portofolio/model/data.csv")
+    data = pd.read_csv("C:/Users/anass/Desktop/Portofolio/data.csv")
     
     # supression des colonnes id et unnamaed
     data = data.drop(["id","Unnamed: 32"], axis = 1)
@@ -158,8 +158,8 @@ def get_radar_chart(input_data):
 
 ############################# Predictions ##############
 def add_predictions(input_data):
-    model = pickle.load(open("C:/Users/anass/Desktop/Portofolio/model/model.pkl", "rb"))
-    scaler = pickle.load(open("C:/Users/anass/Desktop/Portofolio/model/scaler.pkl", "rb"))
+    model = pickle.load(open("C:/Users/anass/Desktop/Portofolio/model.pkl", "rb"))
+    scaler = pickle.load(open("C:/Users/anass/Desktop/Portofolio/scaler.pkl", "rb"))
     
     input_array = np.array(list(input_data.values())).reshape(1,-1) # pour le resultat sur une ligne
     
@@ -198,7 +198,7 @@ def main():
         initial_sidebar_state='expanded'
     )
     
-    with open("C:/Users/anass/Desktop/Portofolio/app/style.css") as f:
+    with open("C:/Users/anass/Desktop/Portofolio/style.css") as f:
         st.markdown("<style>{}</style>".format(f.read()), unsafe_allow_html=True)
     
     

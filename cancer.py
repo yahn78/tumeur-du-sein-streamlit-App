@@ -10,7 +10,7 @@ import pickle as pickle
 
 # obtenion de la table de donnees et netoyage
 def get_clean_data():
-    data = pd.read_csv("C:/Users/anass/Desktop/Portofolio/model/data.csv")
+    data = pd.read_csv("C:/Users/anass/Desktop/Portofolio/data.csv")
     
     # supression des colonnes id et unnamaed
     data = data.drop(["id","Unnamed: 32"], axis = 1)
